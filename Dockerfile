@@ -8,4 +8,7 @@ RUN \
         libxslt \
         zlib-dev
 
+# Install homeassistant
+RUN python3 -m pip install --disable-pip-version-check homeassistant
+
 ENTRYPOINT ["bash", "/runaction.sh"]
