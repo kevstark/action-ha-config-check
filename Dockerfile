@@ -9,6 +9,7 @@ RUN \
         zlib-dev
 
 # Install homeassistant
-RUN python3 -m pip install --disable-pip-version-check homeassistant
+COPY requirements.txt .
+RUN python3 -m pip install --disable-pip-version-check -r requirements.txt
 
 ENTRYPOINT ["bash", "/runaction.sh"]

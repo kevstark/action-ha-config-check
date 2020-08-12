@@ -1,0 +1,12 @@
+homeassistant 
+colorlog 
+paho-mqtt 
+aiohttp_cors 
+home-assistant-frontend
+hass-nabucasa
+PyNaCl
+emoji
+defusedxml
+netdisco
+sqlalchemy
+psutil
