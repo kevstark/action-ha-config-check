@@ -26,14 +26,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: Run Config Check
-      uses: ludeeus/action-ha-config-check@master
+      uses: kevstark/action-ha-config-check@master
 ```
 
 ## Inputs
 
 input | description
 -- | --
-`version` | `STABLE`, `RC` or `DEV` (defaults to `STABLE`).
 `config_path` | Relative path to your configuration if not in the root of the repository.
 
 ### Example with inputs
@@ -56,37 +55,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: Run Config Check
-      uses: ludeeus/action-ha-config-check@master
+      uses: kevstark/action-ha-config-check@master
       with:
-        version: DEV
         config_path: config
 ```
 
-### Example checking against STABLE, RC and DEV in parallel
-
-```yaml
-name: "Run action"
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-jobs:
-  build:
-    strategy:
-      fail-fast: false
-      matrix:
-        HA_VERSION: [STABLE, RC, DEV]
-      max-parallel: 3
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Home Assistant Configuration Check
-      uses: ludeeus/action-ha-config-check@master
-      with:
-        version: matrix.HA_VERSION
-        config_path: .
-```
