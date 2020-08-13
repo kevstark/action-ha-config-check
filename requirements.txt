@@ -1,7 +1,8 @@
-homeassistant 
+async-upnp-client==0.14.13
 colorlog==4.1.0
 paho-mqtt 
 aiohttp_cors 
+homeassistant 
 home-assistant-frontend
 hass-nabucasa
 PyNaCl==1.3.0
