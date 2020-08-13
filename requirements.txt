@@ -11,3 +11,4 @@ defusedxml
 netdisco
 sqlalchemy
 psutil==5.7.0
+speedtest-cli==2.1.2
