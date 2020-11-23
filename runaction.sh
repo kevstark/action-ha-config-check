@@ -16,6 +16,9 @@ if [ -d "${INPUT_CONFIG_PATH}/custom_components/" ]; then
     done
 fi
 
+echo "::info:: Running version"
+hass --version
+
 echo "::info:: Running config check"
 hass --script check_config --config "${GITHUB_WORKSPACE}"/"${INPUT_CONFIG_PATH}" || statuscode=1
 
