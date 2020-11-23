@@ -17,7 +17,9 @@ jobs:
     # Package configurations
     - name: Capture latest release
       run: |
+        cat .HA_VERSION
         curl -s https://github.com/home-assistant/core/releases/latest | egrep -o '(?[0-9|.]{5,})' > .HA_VERSION
+        cat .HA_VERSION
 
     - name: Commit files
       run: |
