@@ -3,6 +3,9 @@
 declare statuscode
 statuscode=0
 
+echo "::info:: Running version"
+hass --version
+
 if [ -d "${INPUT_CONFIG_PATH}/custom_components/" ]; then
   echo "::info:: Install requirements for custom integrations"
   shopt -s globstar nullglob
@@ -15,9 +18,6 @@ if [ -d "${INPUT_CONFIG_PATH}/custom_components/" ]; then
       done
     done
 fi
-
-echo "::info:: Running version"
-hass --version
 
 echo "::info:: Running config check"
 hass --script check_config --config "${GITHUB_WORKSPACE}"/"${INPUT_CONFIG_PATH}" || statuscode=1

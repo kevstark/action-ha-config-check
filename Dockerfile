@@ -9,7 +9,7 @@ RUN \
         zlib-dev
 
 # Copy in the Home Assistant version number to ensure rebuild on version change
-COPY .HA_VERSION
+COPY .HA_VERSION /.HA_VERSION
 
 # Install homeassistant
 COPY requirements.txt .
